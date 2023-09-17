@@ -1,0 +1,30 @@
+<%- include("partials/header.ejs") %>
+
+
+
+    <h2>Add your task.....</h2>
+  
+    
+<form action="/submit" method="post">
+    <input type="text" placeholder="Add Task...." name="addTask">
+    <button type="submit">Add Task</button>
+</form>
+
+<ul>
+    <% for(let i=0; i<tasks.length; i++){ %>
+        <li>
+            <input type="checkbox">
+            <%= tasks[i] %>
+            <a href="/delete/<%= i %>">Delete</a>
+        </li>
+    <%}%>
+</ul>
+
+
+
+
+<%- include("partials/footer.ejs") %>
+
+
+
+
